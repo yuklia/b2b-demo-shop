@@ -434,6 +434,13 @@ foreach ($rabbitConnections as $key => $connection) {
         $config[RabbitMqEnv::RABBITMQ_CONNECTIONS][$key][constant(RabbitMqEnv::class . '::' . $constant)] = $value;
     }
     $config[RabbitMqEnv::RABBITMQ_CONNECTIONS][$key][RabbitMqEnv::RABBITMQ_DEFAULT_CONNECTION] = $key === APPLICATION_STORE;
+    if (getenv('SPRYKER_BROKER_PROTOCOL') === 'TLS') {
+        $config[RabbitMqEnv::RABBITMQ_CONNECTIONS][$key][RabbitMqEnv::RABBITMQ_STREAM_CONTEXT_OPTIONS] = [
+            'ssl' => [
+                'verify_peer' => true,
+            ],
+        ];
+    }
 }
 
 // >>> SCHEDULER
