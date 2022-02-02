@@ -75,29 +75,16 @@ groups:
                     www.de.hum-poc.cloud.spryker.toys:
                         store: DE
                         <<: *frontend-auth
-                    www.de.hum-clone.cloud.spryker.toys:
-                        store: DE
-                        <<: *frontend-auth
                     www.at.hum-poc.cloud.spryker.toys:
                         store: AT
                         <<: *frontend-auth
-                    www.at.hum-clone.cloud.spryker.toys:
-                        store: AT
-                        <<: *frontend-auth
-                    
             boffice:
                 application: backoffice
                 endpoints:
                     backoffice.de.hum-poc.cloud.spryker.toys:
                         store: DE
                         <<: *frontend-auth
-                    backoffice.de.hum-clone.cloud.spryker.toys:
-                        store: DE
-                        <<: *frontend-auth
                     backoffice.at.hum-poc.cloud.spryker.toys:
-                        store: AT
-                        <<: *frontend-auth
-                    backoffice.at.hum-clone.cloud.spryker.toys:
                         store: AT
                         <<: *frontend-auth
             backgw:
